@@ -24,8 +24,8 @@ public class Flower {
 		// called just before display finishes
 		// TODO replace with something smarter
 		for (int i = 0; i < 5; i++) {
-			referent[0] = parent.random(1,5);
-			referent[1] = parent.random(1,5);
+			referent[0] = referent[0] + parent.random(-5,5);
+			referent[1] = referent[1] + parent.random(-5,5);
 		}
 	}
 }
