@@ -61,7 +61,9 @@ public class WorldLoop extends PApplet {
 			for (int i =0; i< flowers1.length; i++) {
 				flowers1[i].update();
 				flowers2[i].update();
+				stroke(204,102,0);
 				flowers1[i].display();
+				stroke(153);
 				flowers2[i].display();
 			}
 			//line(mouseX,mouseY,pmouseX,pmouseY);
@@ -77,10 +79,6 @@ public class WorldLoop extends PApplet {
 				line(origin3[0], origin3[1], referent3[0], referent3[1]);
 			}
 			*/
-			/*for (int i = 0; i < stripes.length; i++) {
-				stripes[i].move();
-				stripes[i].display();
-			}*/
 		}
 	}
 }
