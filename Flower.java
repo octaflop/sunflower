@@ -8,7 +8,7 @@ public class Flower {
 	float[] referent = new float[2];
 	PApplet parent;
 	
-	Flower(PApplet p, float originx, float originy, float referentx,float referenty) {
+	Flower(PApplet p, float originx, float originy, float referentx, float referenty) {
 		parent = p;
 		origin[0] = originx;
 		origin[1] = originy;
@@ -39,36 +39,28 @@ public class Flower {
 		float[] dif = new float[2];
 		dif[0] = parent.abs(prefx - refx);
 		dif[1] = parent.abs(prefx - refy);
-		float ndeltax = -1 *dif[0];
-		float ndeltay = -1 *dif[1];
-		float pdeltax = dif[0];
-		float pdeltay = dif[1];
+		float deltax = dif[0];
+		float deltay = dif[1];
 		if (dif[0] > 0) {
-			ndeltax = (float) (ndeltax * -0.8);
-			pdeltax = (float) (pdeltax * 0.8);
+			deltax = (float) (deltax * 0.8);
 		} 
 		else if (dif[0] < 0) {
-			ndeltax = (float) (ndeltax * -1.6);
-			pdeltax = (float) (pdeltax * 1.6);
+			deltax = (float) (deltax * 1.6);
 		} else {
-			ndeltax = -1;
-			pdeltax = 1;
+			deltax = 1;
 		}
 		
-		if (dif[0] > 0) {
-			ndeltay = (float) (ndeltay * -0.8);
-			pdeltay = (float) (pdeltay * 0.8);
+		if (dif[1] > 0) {
+			deltay = (float) (deltay * 0.8);
 		} 
-		else if (dif[0] < 0) {
-			ndeltay = (float) (ndeltay * -1.6);
-			pdeltay = (float) (pdeltay * 1.6);
+		else if (dif[1] < 0) {
+			deltay = (float) (deltay * 1.6);
 		} else {
-			ndeltay = -1;
-			pdeltay = 1;
+			deltay = 1;
 		}
 		
-		ret[0] = prefx * parent.random(ndeltax, pdeltax);
-		ret[1] = prefy * parent.random(ndeltay, pdeltay);
+		ret[0] = prefx + parent.random(deltax, -deltax);
+		ret[1] = prefy + parent.random(deltay, -deltay);
 		return ret;
 	}
 }
