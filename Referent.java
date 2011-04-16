@@ -2,6 +2,7 @@ import processing.core.PApplet;
 public class Referent {
 	/**
 	 * A Referent is a dot for the flowers to follow; it's like the "sun"
+	 * Referents are replicated for each flower bed
 	 */
 	private static final long serialVersionUID = 1L;
 	float[] position = new float[2];

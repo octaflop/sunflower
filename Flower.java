@@ -1,7 +1,7 @@
 import processing.core.PApplet;
 public class Flower {
 	/**
-	 * A Flower is a line-making agent
+	 * A Flower is an agent which speaks and interprets
 	 */
 	private static final long serialVersionUID = 1L;
 	float[] origin = new float[2];
@@ -26,8 +26,6 @@ public class Flower {
 		// april 5: replaced with annealing
 		float crt = 1;
 		for (int i = 0; i < 5; i++) {
-			//referent[0] = referent[0] + parent.random(-5,5);
-			//referent[1] = referent[1] + parent.random(-5,5);
 			float[] fixedref = new float[2];
 			fixedref[0] = parent.width/2;
 			fixedref[1] = parent.height/2;
@@ -37,8 +35,8 @@ public class Flower {
 	float[] anneal(float prefx, float prefy, float refx, float refy) {
 		float[] ret = new float[2];
 		float[] dif = new float[2];
-		dif[0] = parent.abs(prefx - refx);
-		dif[1] = parent.abs(prefx - refy);
+		dif[0] = PApplet.abs(prefx - refx);
+		dif[1] = PApplet.abs(prefx - refy);
 		float deltax = dif[0];
 		float deltay = dif[1];
 		if (dif[0] > 0) {

@@ -9,8 +9,8 @@ public class WorldLoop extends PApplet {
 	int height = 600;
 	// first row of flowers
 	// TODO: Test these
-	Flower[] flowers1 = new Flower[10];
-	Flower[] flowers2 = new Flower[10];
+	Flower[] flowers1 = new Flower[2];
+	Flower[] flowers2 = new Flower[2];
 	//Referent referent = new Referent; //(this, width/2, height/2);
 	Referent referent;
 
@@ -18,12 +18,9 @@ public class WorldLoop extends PApplet {
 	public void setup() {
 		size(width,height);
 		background(0);
-		// Initialize all "stripes"
-/*		for (int i = 0; i < stripes.length; i++) {
-			stripes[i] = new Stripe(this);
-		}*/
 		// initialize "sun"
-		referent = new Referent(this, width/2, height/2);
+		Referent referent1 = new Referent(this, width/2, height/2);
+		Referent referent2 = new Referent(this, width/2, height/2);
 		// Initialize all flowers
 		for (int i =0; i< flowers1.length; i++) {
 			flowers1[i] = new Flower(this, 
