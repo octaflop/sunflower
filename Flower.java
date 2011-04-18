@@ -36,6 +36,7 @@ public class Flower {
 	
 	void display() {
 		parent.fill(color[0], color[1], color[2]);
+		parent.stroke(color[0], color[1], color[2]);
 		parent.rect(pos[0], pos[1], dispbox[0], dispbox[1]);
 	}
 	

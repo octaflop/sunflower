@@ -1,14 +1,30 @@
 import processing.core.PApplet;
 public class Environment {
-	PApplet parent;
-	Flower speaker;
-	Flower hearer;
-	float[] error;
-	
 	/**
 	 * The environment determines the fitness so the statebuilder
 	 *  can build a new state
 	 */
+	PApplet parent;
+	Flower speaker;
+	Flower hearer;
+	float[] error = new float[3];
+	int[] initial_col = new int[3]; int[] last_col = new int[3];
+	//initial speaker color is red @ 80% redness
+	
+	Environment () {
+		initial_col[0] = 80;
+		initial_col[1] = 0;
+		initial_col[2] = 0;
+		// colour shifts to blue @ 90% blueness
+		last_col[0] = 0;
+		last_col[1] = 0;
+		last_col[2] = 90;
+	}
+	
+	public int[] initial_color () {
+		return initial_col;
+	}
+	
 	public float percentage_error(Flower speaker, Flower hearer) {
 		/*
 		 * Returns the fitness of the S→H

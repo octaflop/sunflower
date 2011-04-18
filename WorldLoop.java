@@ -8,8 +8,7 @@ public class WorldLoop extends PApplet {
 	int width = 600;
 	int height = 600;
 	//Referent referent = new Referent; //(this, width/2, height/2);
-	Referent referent1 = new Referent(this, width/2, height/2);
-	Referent referent2 = new Referent(this, width/2, height/2);
+	Environment env = new Environment();
 	int[] posa = new int[2];
 	int[] posb = new int[2];
 	int[] speakercol = new int[3];
@@ -38,7 +37,8 @@ public class WorldLoop extends PApplet {
 		if (mousePressed) {
 			speaker.display();
 			hearer.display();
-			speaker.recolorit();
+			speaker.colorit(env.initial_color()[0], env.initial_color()[1], env.initial_color()[2]);
+			//speaker.recolorit();
 			hearer.recolorit();
 			//clear previous text
 			fill(0,0,0);
