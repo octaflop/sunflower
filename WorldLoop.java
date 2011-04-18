@@ -12,10 +12,10 @@ public class WorldLoop extends PApplet {
 	Referent referent2 = new Referent(this, width/2, height/2);
 	int[] posa = new int[2];
 	int[] posb = new int[2];
-	int[] colora = new int[3];
-	int[] colorb = new int[3];
-	Flower flowera = new Flower(this);
-	Flower flowerb = new Flower(this);
+	int[] speakercol = new int[3];
+	int[] hearercol = new int[3];
+	Flower speaker = new Flower(this);
+	Flower hearer = new Flower(this);
 	
 	// The main setup function...
 	public void setup() {
@@ -25,10 +25,10 @@ public class WorldLoop extends PApplet {
 		posa[1] = height/4; // posa y
 		posb[0] = width/2; // posa x
 		posb[1] = height/4 + height/2; // posa y
-		flowera.colorit(50, 50, 50);
-		flowera.positionit(posa[0], posa[1]);
-		flowerb.colorit(75, 75, 75);
-		flowerb.positionit(posb[0], posb[1]);
+		speaker.colorit(50, 50, 50);
+		speaker.positionit(posa[0], posa[1]);
+		hearer.colorit(75, 75, 75);
+		hearer.positionit(posb[0], posb[1]);
 		// initialize "sun"
 		// Initialize all flowers
 	}
@@ -36,10 +36,23 @@ public class WorldLoop extends PApplet {
 	public void draw() {
 		stroke(255);
 		if (mousePressed) {
-			flowera.display();
-			flowerb.display();
-			flowera.recolorit();
-			flowerb.recolorit();
+			speaker.display();
+			hearer.display();
+			speaker.recolorit();
+			hearer.recolorit();
+			//clear previous text
+			fill(0,0,0);
+			stroke(0,0,0);
+			rect(0,0,375,150);
+			fill(91,91,91);
+			String speaks = "Speaker: " + speaker.speak() + " " + speaker.colour()[0] + ", " + speaker.colour()[1] + ", " + speaker.colour()[2];
+			String hears = "Listener: " + hearer.speak() + " " + hearer.colour()[0] + ", " + hearer.colour()[1] + ", " + hearer.colour()[2];
+			Environment env = new Environment();
+			String error = "Error Rate: " + str(env.percentage_error(speaker, hearer));
+			// write new values
+			text(speaks, 15, 25);
+			text(hears, 15, 45);
+			text(error, 15, 65);
 		}
 	}
 }

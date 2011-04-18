@@ -1,6 +1,9 @@
 import processing.core.PApplet;
 public class Fsm {
-
+	/**
+	 * The finite state machine takes the states of the incoming stings and 
+	 * outputs a 3-part colour value int[]. 
+	 */
 	public String event = null;
 	public String response = "Idle";
 	public State currState = null;
@@ -33,17 +36,18 @@ public class Fsm {
 
 	public static void doAction(int fun, Fsm fsm){
 		switch(fun){
+		// TODO: Make this dynamic from a GA
 		case 1:
 			fsm.response = "Powering up...";
 			break;
 		case 2:
-			fsm.response = "Bender has shut down";
+			fsm.response = "Flower has shut down";
 			break;
 		case 3:
-			fsm.response = "Bender is now online";
+			fsm.response = "Flower is now speaking";
 			break;
 		case 4:
-			fsm.response = "Activity/Walking";
+			fsm.response = "performing";
 			break;
 		case 5:
 			fsm.response = "Activity/Run";
