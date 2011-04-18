@@ -3,7 +3,7 @@ public class StateBuilder {
 	PApplet parent;
 	Flower speaker;
 	Flower hearer;
-	Fsm fsm = new Fsm();
+	Fsm fsm;
 	Environment env = new Environment();
 	State[] st = new State[4];
 	
@@ -13,9 +13,9 @@ public class StateBuilder {
 	}
 	
 	
-	/* for now, we determine everything by simulated annealing
-	 * i.e. we reduce the entropy as the solution becomes
-	 * more fit
+	/* 
+	 * The StateBuilder puts together different states based on the error
+	 * percentage.
 	 */
 	
 	StateBuilder(Flower speaker, Flower hearer, Fsm agentfsm) {
@@ -24,7 +24,6 @@ public class StateBuilder {
 		for(int i = 0; i < st.length; ++i) {
 			st[i] = new State();
 		}
-		
 	}
 	
 	void addStates() {

@@ -8,7 +8,7 @@ public class Flower {
 	int[] color = new int[3];
 	int[] dispbox = new int[2];
 	int[] pos = new int[2];
-	String utterance;
+	String utterance = null;
 	PApplet parent;
 	Fsm grammar;
 	
@@ -46,7 +46,7 @@ public class Flower {
 		if (utterance == null) {
 			// initiate grammar with random rules
 			utterance = "AB";
-			Fsm grammar = new Fsm();
+			Fsm grammar = new Fsm(this); // Flower adds itself to the grammar
 			utterance = grammar.response;
 		} 
 		//grammar.inEvent(utterance);

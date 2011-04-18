@@ -9,7 +9,8 @@ public class State {
 	public String name = "";
 	public int numTransitions = 0;
 	public int numEvents = 0;
-	public int maxEvents = 6;
+	//public int maxEvents = 6;
+	public int maxEvents = 20;
 
 	public Vector specifications;
 	public Vector transitions;
