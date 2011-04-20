@@ -56,9 +56,9 @@ public class Flower {
 	
 	void recolorit() {
 		// the interpreter class taking the previous colour and shoving it through the GA
-		color[0] = (int) (color[0] + parent.random(-30,30));
-		color[1] = (int) (color[1] + parent.random(-20,20));
-		color[2] = (int) (color[2] + parent.random(-10,10));
+		color[0] = (int) (color[0] + parent.random(-5,5));
+		color[1] = (int) (color[1] + parent.random(-10,10));
+		color[2] = (int) (color[2] + parent.random(-20,20));
 	}
 	
 	public int[] colour() {

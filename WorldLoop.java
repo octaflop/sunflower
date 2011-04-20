@@ -44,7 +44,7 @@ public class WorldLoop extends PApplet {
 			fill(0,0,0);
 			stroke(0,0,0);
 			rect(0,0,375,150);
-			fill(91,91,91);
+			fill(255,255,255);
 			String speaks = "Speaker: " + speaker.speak() + " " + speaker.colour()[0] + ", " + speaker.colour()[1] + ", " + speaker.colour()[2];
 			String hears = "Listener: " + hearer.speak() + " " + hearer.colour()[0] + ", " + hearer.colour()[1] + ", " + hearer.colour()[2];
 			Environment env = new Environment();

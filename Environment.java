@@ -12,9 +12,9 @@ public class Environment {
 	//initial speaker color is red @ 80% redness
 	
 	Environment () {
-		initial_col[0] = 80;
+		initial_col[0] = 40;
 		initial_col[1] = 0;
-		initial_col[2] = 0;
+		initial_col[2] = 120;
 		// colour shifts to blue @ 90% blueness
 		last_col[0] = 0;
 		last_col[1] = 0;
